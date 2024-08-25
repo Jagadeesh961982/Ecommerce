@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(
     {
-        origin:["https://ecommerce-khaki-psi.vercel.app/"],
+        origin:["https://ecommerce-khaki-psi.vercel.app" || "http://localhost:3000"],
         credentials:true
     }
 ));
