@@ -2,11 +2,11 @@ import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import productRoutes from '../routes/productRoute.js';
-import errorMidleware from '../middleware/error_middleware.js';
-import userRoutes from "../routes/userRoutes.js";
-import orderRoutes from '../routes/orderRoutes.js';
-import paymentRoutes from '../routes/paymentRoute.js';
+import productRoutes from './routes/productRoute.js';
+import errorMidleware from './middleware/error_middleware.js';
+import userRoutes from "./routes/userRoutes.js";
+import orderRoutes from './routes/orderRoutes.js';
+import paymentRoutes from './routes/paymentRoute.js';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import cloudinary from 'cloudinary';
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(
     {
-        origin:["https://ecommerce-mluc0meko-gradeup163gmailcoms-projects.vercel.app" || "http://localhost:3000"],
+        origin:["http://localhost:3000"],
         credentials:true
     }
 ));
