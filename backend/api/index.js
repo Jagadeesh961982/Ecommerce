@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors(
     {
-        origin:["https://ecommerce-mluc0meko-gradeup163gmailcoms-projects.vercel.app/" || "http://localhost:3000"],
+        origin:["https://ecommerce-mluc0meko-gradeup163gmailcoms-projects.vercel.app" || "http://localhost:3000"],
         credentials:true
     }
 ));
