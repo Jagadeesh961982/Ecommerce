@@ -37,7 +37,7 @@ const ProductDetails=()=>{
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000 
+      autoplaySpeed: 1500 
     };
 
     let isOrdered;
@@ -88,9 +88,9 @@ const ProductDetails=()=>{
 
     const submitReviewHandler=()=>{
       const myForm=new FormData()
-      myForm.set("rating",rating)
-      myForm.set("comment",comment)
-      myForm.set("productId",id)
+      myForm.append("rating",rating)
+      myForm.append("comment",comment)
+      myForm.append("productId",id)
       dispatch(createNewReview(myForm))
       setOpen(false)
     }
@@ -119,9 +119,9 @@ const ProductDetails=()=>{
           dispatch({type:ADD_TO_CART_RESET})
           
         }
-        if(success){
-          toast.success("Review saved successfully")
-        }
+        // if(success){
+        //   toast.success("Review saved successfully")
+        // }
       dispatch(getProductDetails(id));
       dispatch(getMyorders())
     },[dispatch,id,error,reviewError,success,message]);
@@ -162,9 +162,9 @@ const ProductDetails=()=>{
       <div className='productDetails'>
           <div className="carouselContainer">
             {product.images &&
-              <Slider {...settings}>
+              <Slider {...settings} className="slider">
                 {product.images.map((image) => {
-                  console.log(image.url)
+                  
                   return (<div key={image._id}>
                     <img src={image.url} alt={product.name} className='carouselImg' />
                   </div>)
